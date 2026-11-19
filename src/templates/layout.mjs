@@ -26,7 +26,8 @@ const paths = {
 };
 
 export const icon = (name) => `<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name]}"/></svg>`;
-export const button = (href, label, style = 'dark', symbol = 'diagonal') => `<a class="btn btn--${style}" href="${escape(href)}">${escape(label)}${icon(symbol)}</a>`;
+export const glass = '<span class="glass" aria-hidden="true"></span>';
+export const button = (href, label, style = 'dark', symbol = 'diagonal') => `<a class="btn btn--${style}" href="${escape(href)}">${style === 'glass' ? glass : ''}${escape(label)}${icon(symbol)}</a>`;
 export const emailLink = (subject) => `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
 export const whatsapp = `https://wa.me/${site.telephone.slice(1)}`;
 
@@ -53,21 +54,24 @@ function header(path) {
 function dock(path) {
   if (path.startsWith('/contatti/')) return '';
   return `<aside class="dock" aria-label="Contatto rapido">
+    <span class="glass" aria-hidden="true"></span>
     <a class="dock__main" href="/contatti/#preventivo">Richiedi un preventivo${icon('diagonal')}</a>
     <a class="dock__icon" href="${whatsapp}" aria-label="Scrivici su WhatsApp">${icon('chat')}</a>
     <a class="dock__icon" href="tel:${site.telephone}" aria-label="Chiama ${site.phone}">${icon('phone')}</a>
   </aside>`;
 }
 
+// Sezione del footer: aperta su desktop, a fisarmonica su mobile (site.js).
+const section = (title, links) => `<details class="footer__group" open><summary><h2>${title}</h2>${icon('plus')}</summary><div class="footer__links">${links}</div></details>`;
+
 function footer(groups, products) {
   return `<footer class="footer"><div class="wrap">
     <div class="footer__main">
       <div class="footer__brand"><a class="brand" href="/" aria-label="IRE Torino, homepage">${logo()}</a><p>Infissi, tapparelle, persiane e tutto ciò che serve al vano finestra. Da Mappano, per Torino e provincia.</p></div>
-      ${groups.map((group) => `<nav aria-label="${group.name}"><h2>${group.name}</h2>${products.filter((item) => item.group === group.id).map((item) => `<a href="${item.url}">${item.name}</a>`).join('')}</nav>`).join('')}
-      <div><h2>IRE Torino</h2>${menu.slice(1).map(([url, label]) => `<a href="${url}">${label}</a>`).join('')}
+      ${groups.map((group) => section(group.name, products.filter((item) => item.group === group.id).map((item) => `<a href="${item.url}">${item.name}</a>`).join(''))).join('')}
+      ${section('IRE Torino', `${menu.slice(1).map(([url, label]) => `<a href="${url}">${label}</a>`).join('')}
         <address><a href="tel:${site.telephone}">${site.phone}</a><a href="mailto:${site.email}">${site.email}</a><a href="${site.operatingOffice.mapUrl}">${escape(site.operatingOffice.address)}</a></address>
-        <p class="footer__social"><a href="${site.instagram}">Instagram</a><a href="${site.facebook}">Facebook</a></p>
-      </div>
+        <p class="footer__social"><a href="${site.instagram}">Instagram</a><a href="${site.facebook}">Facebook</a></p>`)}
     </div>
     <div class="footer__legal">
       <p>${escape(site.legalName)} · Sede legale ${escape(registeredAddress)} · P. IVA ${site.vat} · REA ${site.rea} · PEC <a href="mailto:${site.pec}">${site.pec}</a></p>

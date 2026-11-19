@@ -27,7 +27,7 @@ Carattere unico **Hanken Grotesk** variabile, ospitato in `src/assets/fonts/` (n
 
 | Componente | Classe | Dove |
 |---|---|---|
-| Testata fissa, trasparente sulla home fino allo scorrimento | `.header`, `.header--over` | tutte |
+| Testata fissa bianca, trasparente sulla home fino allo scorrimento | `.header`, `.header--over` | tutte |
 | Barra contatto flottante (preventivo, WhatsApp, telefono), si ritira sulla chiusura | `.dock` | tutte tranne Contatti |
 | Intestazione pagina con titolo su due righe | `.page-head` | pagine interne |
 | Bottoni | `.btn--dark`, `--light`, `--ghost`, `--ghost-light` | ovunque |
@@ -36,9 +36,14 @@ Carattere unico **Hanken Grotesk** variabile, ospitato in `src/assets/fonts/` (n
 | Apertura scheda: pannello colore famiglia + foto | `.cover` | 18 schede |
 | Pannello diviso nero con parola gigante | `.statement` | home, azienda |
 | Chiusura nera con contatti | `.closing` | tutte tranne Contatti |
+| Sezioni del footer in `details`: aperte su desktop, a fisarmonica sotto 560 px | `.footer__group` | tutte |
 | Schede indice | `.tabs` | catalogo, schede (sticky) |
 
-Regola di uniformità: ogni pagina si compone solo con questi componenti. Niente etichette sopra i titoli, niente vetro decorativo.
+Regola di uniformità: ogni pagina si compone solo con questi componenti. Niente etichette sopra i titoli.
+
+## Liquid Glass
+
+Richiesto dall’utente, stile Apple, su elementi della pagina e non sull’header. Hanno uno strato `.glass`: barra preventivo, bottoni secondari sulle foto (`.btn--glass`, `button(..., 'glass')`), quadrati «+» delle card, etichette `.chip` sulle foto delle schede e dei pannelli divisi. Su foto chiare il vetro è fumé, per leggere icone e testo bianchi. Nessun border-radius sugli elementi in vetro, come nel resto del sito (richiesta dell’utente). `src/assets/js/glass.js` calcola per ogni strato una mappa di rifrazione (profilo convesso a squircle, legge di Snell, indice 1,5) e una luce speculare dall’alto a sinistra, e le usa in un filtro SVG come `backdrop-filter`. Le mappe si rigenerano quando cambia la misura e si riducono in proporzione sugli elementi piccoli. Modello da [Liquid Glass in the Browser](https://kube.io/blog/liquid-glass-css-svg/). Solo Chromium supporta il filtro SVG sullo sfondo: Safari e Firefox mostrano vetro sfocato. Con trasparenza ridotta il fondo è bianco pieno. `?vetro=lucido` e `?vetro=fume` cambiano il profilo, il predefinito è satinato.
 
 ## Movimento
 

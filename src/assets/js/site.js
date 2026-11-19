@@ -1,5 +1,9 @@
+import { liquidGlass } from './glass.js';
+
 const pageParams = new URLSearchParams(window.location.search);
 const header = document.querySelector('.header');
+const glass = pageParams.get('vetro');
+document.querySelectorAll('.glass').forEach((layer) => liquidGlass(layer, glass));
 
 // Homepage: testata trasparente sulla foto, bianca dopo lo scorrimento.
 if (header?.classList.contains('header--over')) {
@@ -52,6 +56,16 @@ if (dock && endings.length && 'IntersectionObserver' in window) {
   });
   endings.forEach((element) => observer.observe(element));
 }
+
+// Footer a fisarmonica su mobile: sezioni chiuse, aperte su schermi più larghi.
+const footerGroups = document.querySelectorAll('.footer__group');
+const narrow = window.matchMedia('(max-width: 560px)');
+const syncFooter = () => footerGroups.forEach((group) => {
+  group.open = !narrow.matches;
+  group.querySelector('summary').tabIndex = narrow.matches ? 0 : -1;
+});
+syncFooter();
+narrow.addEventListener('change', syncFooter);
 
 const form = document.querySelector('#request-form');
 

@@ -9,4 +9,4 @@
 - Nelle pagine commerciali dai spazio alle fotografie e alterna ambienti ampi ai dettagli del prodotto. Il riferimento indicato dal cliente è Domino. Usa marchio e contenuti IRE.
 - Mostra la sede operativa nei Contatti. Sede legale e dati societari vanno nella fascia piccola del footer.
 - Commit, push e pubblicazione solo su richiesta esplicita. Prima di rimuovere una pagina, controlla link e destinazione di migrazione.
-- Design: il cliente vuole il look complessivo di Domino con marchio IRE. Logo IRE intoccabile. Componi le pagine solo con i componenti di `doc/design.md`. Niente etichette sopra i titoli e niente effetti vetro decorativi. Pubblico principale: privati.
+- Design: il cliente vuole il look complessivo di Domino con marchio IRE. Logo IRE intoccabile. Componi le pagine solo con i componenti di `doc/design.md`. Niente etichette sopra i titoli. Il Liquid Glass stile Apple è una richiesta dell’utente: va su elementi qua e là della pagina (bottoni, «+», etichette, barra preventivo), non sull’header, sempre senza border-radius. Non toglierlo. Pubblico principale: privati.

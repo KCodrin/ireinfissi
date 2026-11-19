@@ -20,4 +20,4 @@ In anteprima la richiesta viene preparata lato browser per il programma di posta
 
 **Decisione** — L’accento del sito non è più il giallo `#fdc134`. Le quattro famiglie usano i colori delle copertine dei cataloghi IRE e il resto è bianco e nero come il logo.
 **Perché** — Il logo IRE è nero con sfera grigia e il giallo veniva dal vecchio tema WordPress. Il cliente chiede il look di Domino, che distingue le famiglie con campi di colore.
-**Scartate** — Mantenere il giallo come unico accento: sarebbe stato meno riconoscibile e meno vicino al riferimento. L’effetto vetro dell’header è stato tolto: era pesante, poco affidabile su Safari e non serviva al riferimento.
+**Scartate** — Mantenere il giallo come unico accento: sarebbe stato meno riconoscibile e meno vicino al riferimento. Il Liquid Glass era stato tolto per errore ed è stato ripristinato su richiesta dell’utente (vedi design.md).

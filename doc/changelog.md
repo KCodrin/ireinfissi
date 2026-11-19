@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-11-19 · Vetro ad angoli vivi e footer a fisarmonica
+
+**Cosa** — Tolti i border-radius da tutti gli elementi in Liquid Glass (bottoni, «+», etichette, barra preventivo). Le sezioni del footer sono ora `details` nativi: aperte su desktop, chiuse a fisarmonica sotto i 560 px. Su desktop il titolo non si può chiudere né raggiungere con il tasto Tab. Corretta la fascia colorata sotto la foto delle card famiglia su mobile.
+
+**Perché** — Richieste dell’utente: niente arrotondamenti sul vetro e footer più corto da mobile.
+
+**Verifica** — `npm run check` riuscito su 25 pagine e 997 riferimenti. A 375 px le 5 sezioni partono chiuse, si aprono al tocco e non c’è scorrimento orizzontale. A 1440 px sono tutte aperte. Raggio del vetro misurato a 0 px.
+
+## 2026-11-19 · Liquid Glass sugli elementi della pagina
+
+**Cosa** — Header riportato alla barra bianca a tutta larghezza. Applicato il Liquid Glass a bottoni secondari sulle foto, quadrati «+» delle card famiglia e prodotto, etichette sulle foto delle schede e dei pannelli divisi, oltre alla barra preventivo. Vetro fumé sulle foto chiare. Il motore riduce rifrazione e bordo sugli elementi piccoli.
+
+**Perché** — L’utente vuole il vetro liquido su elementi qua e là del sito, non sull’header.
+
+**Verifica** — `npm run check` riuscito su 25 pagine e 997 riferimenti. In Chromium 8 strati di vetro attivi in home. Controllati a 1440 px home, Prodotti e Pergole, e a 375 px la home e il menu, senza scorrimento orizzontale. Safari reale non verificato.
+
+## 2026-11-19 · Liquid Glass ripristinato
+
+**Cosa** — Riscritto l’effetto Liquid Glass stile Apple in `src/assets/js/glass.js`, al posto di `header-glass.js` rimosso nel turno precedente. Header ora flottante e arrotondato. Applicato il vetro anche alla barra «Richiedi un preventivo». Il menu mobile resta a tutto schermo e le schede delle sezioni si agganciano sotto l’header.
+
+**Perché** — L’effetto era una richiesta esplicita dell’utente ed era stato tolto per errore.
+
+**Verifica** — `npm run check` riuscito su 25 pagine e 997 riferimenti. Il filtro di rifrazione è attivo su header e barra in Chromium. Controllati a 1440 px l’header sopra la foto e sopra le card colorate, e a 375 px una scheda prodotto e il menu. Safari reale non verificato: lì il vetro resta sfocato senza rifrazione.
+
 ## 2026-11-19 · Nuovo design uniforme sul modello Domino
 
 **Cosa** — Rifatto il design di tutte le 25 pagine con un unico sistema. Fondo bianco, carattere Hanken Grotesk ospitato nel sito, titoli su due righe, bottoni neri ad angoli vivi, barra «Richiedi un preventivo» flottante e chiusura nera con i contatti. I colori delle quattro famiglie vengono dalle copertine dei cataloghi IRE (blu, verde acqua, giallo, magenta), insieme alla fascia a chevron. Nuova apertura della home con foto a tutto schermo. Schede prodotto con pannello del colore di famiglia accanto alla foto. Cataloghi con le copertine vere e footer con tutti i prodotti. Rimossi l’effetto vetro dell’header (`header-glass.js`) e le etichette sopra i titoli. Logo ricavato in alta risoluzione dal vecchio sito, foto principali rigenerate dagli originali a 1920 px. Creato `PRODUCT.md`.

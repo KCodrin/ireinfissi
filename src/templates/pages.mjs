@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { registeredAddress, site } from '../content/site.mjs';
 import { catalogs, groups, products } from '../content/products.mjs';
-import { breadcrumb, button, emailLink, escape, icon, whatsapp } from './layout.mjs';
+import { breadcrumb, button, emailLink, escape, glass, icon, whatsapp } from './layout.mjs';
 
 const images = JSON.parse(readFileSync(new URL('../content/images.json', import.meta.url)));
 const groupOf = (id) => groups.find((group) => group.id === id);
@@ -26,13 +26,13 @@ function familyCard(group) {
   return `<li><a class="family family--${group.id}" href="/services/#${group.id}">
     <h3>${group.name}<span>${group.line}</span></h3>
     <div class="family__photo">${chevron}${photo(group.image, group.alt, { sizes: '(min-width: 900px) 25vw, 80vw' })}</div>
-    <span class="plus">${icon('plus')}</span>
+    <span class="plus">${glass}${icon('plus')}</span>
   </a></li>`;
 }
 
 function productCard(product) {
   return `<li><a class="card" href="${product.url}">
-    <div class="card__photo">${photo(product.image, product.alt, { sizes: '(min-width: 900px) 30vw, 90vw' })}<span class="plus">${icon('plus')}</span></div>
+    <div class="card__photo">${photo(product.image, product.alt, { sizes: '(min-width: 900px) 30vw, 90vw' })}<span class="plus">${glass}${icon('plus')}</span></div>
     <h3>${escape(product.name)}</h3><p>${escape(product.intro)}</p>
   </a></li>`;
 }
@@ -89,7 +89,7 @@ const home = {
     <div class="hero__copy wrap">
       <h1 id="titolo-home">Tutto il vano finestra.<span>Un solo interlocutore.</span></h1>
       <p>Infissi, isolamento, schermature e posa per chi rinnova casa a Torino e provincia.</p>
-      <div class="actions">${button('/services/', 'Scopri i prodotti', 'light')}${button('/contatti/#preventivo', 'Richiedi un preventivo', 'ghost-light')}</div>
+      <div class="actions">${button('/services/', 'Scopri i prodotti', 'light')}${button('/contatti/#preventivo', 'Richiedi un preventivo', 'glass')}</div>
     </div>
   </section>
   <section class="section" aria-labelledby="famiglie">
@@ -99,7 +99,7 @@ const home = {
     </div>
   </section>
   <section class="statement" aria-labelledby="posa">
-    ${photo('posa', 'Tecnico che installa un serramento sul vano finestra')}
+    <figure class="statement__photo">${photo('posa', 'Tecnico che installa un serramento sul vano finestra')}<figcaption class="chip">${glass}Posa con sistema PosaClima</figcaption></figure>
     <p class="statement__word" aria-hidden="true">posa</p>
     <div class="statement__copy">
       <h2 id="posa">Il serramento giusto,<span>montato nel vano giusto.</span></h2>
@@ -111,7 +111,7 @@ const home = {
     <div class="wrap duo">
       <a class="panel" href="/azienda/">
         ${photo('progettazione', 'Disegni e materiali per la progettazione di un intervento')}
-        <div class="panel__copy"><h2>Da Mappano,<span>per Torino e provincia.</span></h2><span class="btn btn--ghost-light">L’azienda${icon('diagonal')}</span></div>
+        <div class="panel__copy"><h2>Da Mappano,<span>per Torino e provincia.</span></h2><span class="btn btn--glass">${glass}L’azienda${icon('diagonal')}</span></div>
       </a>
       <a class="panel panel--catalogs" href="/cataloghi/">
         <div class="panel__covers">${['cat-persiane', 'cat-avvolgibili', 'cat-monoblocchi'].map((key) => photo(key, 'Copertina di un catalogo IRE')).join('')}</div>
@@ -158,7 +158,7 @@ function productPage(product) {
         <p>${escape(product.intro)}</p>
         <div class="actions">${button(requestUrl, 'Richiedi un preventivo')}<a class="text-link" href="/services/#${group.id}">${group.name}${icon('right')}</a></div>
       </div>
-      <figure class="cover__photo">${chevron}${photo(product.image, product.alt, { hero: true, sizes: '(min-width: 900px) 55vw, 100vw' })}</figure>
+      <figure class="cover__photo">${chevron}${photo(product.image, product.alt, { hero: true, sizes: '(min-width: 900px) 55vw, 100vw' })}<figcaption class="chip">${glass}${group.name}</figcaption></figure>
     </section>
     <nav class="tabs tabs--sticky" aria-label="In questa scheda"><div class="wrap">
       <a class="tabs__link" href="#scelta">Come scegliere</a>
@@ -197,7 +197,7 @@ const company = {
       <div><h2 class="title">Un percorso in tre passi.<span>Con un riferimento unico.</span></h2><p class="lead">Seguiamo interventi su abitazioni e spazi commerciali. Affianchiamo il cliente nella scelta dei materiali, nel coordinamento dei prodotti e nella valutazione dei dettagli di posa.</p>${steps()}</div>
     </div></section>
     <section class="statement statement--short" aria-labelledby="t-sede">
-      ${photo('acciaio', 'Parete vetrata con profili in acciaio in un interno a doppia altezza')}
+      <figure class="statement__photo">${photo('acciaio', 'Parete vetrata con profili in acciaio in un interno a doppia altezza')}<figcaption class="chip">${glass}Infissi e porte in acciaio</figcaption></figure>
       <div class="statement__copy"><h2 id="t-sede">Sede operativa<span>a Mappano.</span></h2><p>${escape(site.operatingOffice.address)}</p>${button(site.operatingOffice.mapUrl, 'Apri in Google Maps', 'light')}</div>
     </section>
     ${closing()}`,
