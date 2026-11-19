@@ -17,6 +17,7 @@ const paths = {
   right: 'M4 9h10m-4-4 4 4-4 4',
   diagonal: 'M5 5l8 8M13 6v7H6',
   plus: 'M9 3v12M3 9h12',
+  chevron: 'M5 7l4 4 4-4',
   phone: 'M5 3h3l1 4-2 1a8 8 0 0 0 3 3l1-2 4 1v3a2 2 0 0 1-2 2A11 11 0 0 1 3 5a2 2 0 0 1 2-2Z',
   chat: 'M3 14.5 4 11a6 6 0 1 1 2.6 2.5L3 14.5Z',
   pin: 'M14 7c0 4-5 8-5 8S4 11 4 7a5 5 0 1 1 10 0ZM9 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z',
@@ -37,14 +38,36 @@ export function breadcrumb(current, parent) {
 
 const logo = (white = false) => `<img src="/assets/img/logo-ire${white ? '-bianco' : ''}.png" width="113" height="79" alt="IRE Torino">`;
 
-function header(path) {
+function mega(path, groups, products) {
+  const current = path.startsWith('/services/');
+  return `<div class="nav__item">
+    <button class="nav__link nav__trigger${current ? ' is-current' : ''}" type="button" aria-expanded="false" aria-controls="mega">Prodotti${icon('chevron')}</button>
+    <div id="mega" class="mega" hidden>
+      <div class="wrap mega__inner">
+        ${groups.map((group) => `<div class="mega__group mega__group--${group.id}">
+          <a class="mega__family" href="/services/#${group.id}">${group.name}</a>
+          <ul>${products.filter((item) => item.group === group.id).map((item) => `<li><a href="${item.url}"${path === item.url ? ' aria-current="page"' : ''}>${item.name}</a></li>`).join('')}</ul>
+        </div>`).join('')}
+        <div class="mega__aside">
+          <p class="mega__title">Non sai da dove partire?</p>
+          <p>Raccontaci il lavoro: ti aiutiamo a scegliere la soluzione.</p>
+          ${button('/contatti/#preventivo', 'Richiedi un preventivo')}
+          <a class="text-link" href="/services/">Tutti i prodotti${icon('right')}</a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function header(path, groups, products) {
   const over = path === '/';
   return `<header class="header${over ? ' header--over' : ''}">
     <div class="wrap header__bar">
       <a class="brand" href="/" aria-label="IRE Torino, homepage">${over ? `<span class="brand__light">${logo(true)}</span><span class="brand__dark">${logo()}</span>` : logo()}</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu" hidden>${icon('menu')}</button>
       <nav id="main-nav" class="nav" aria-label="Principale">
-        ${menu.map(([url, label]) => `<a class="nav__link" href="${url}"${path === url ? ' aria-current="page"' : path.startsWith(url) ? ' aria-current="true"' : ''}>${label}</a>`).join('')}
+        ${mega(path, groups, products)}
+        ${menu.slice(1).map(([url, label]) => `<a class="nav__link" href="${url}"${path === url ? ' aria-current="page"' : path.startsWith(url) ? ' aria-current="true"' : ''}>${label}</a>`).join('')}
         <a class="nav__phone" href="tel:${site.telephone}">${icon('phone')}${site.phone}</a>
       </nav>
     </div>
@@ -106,7 +129,7 @@ export function layout({ path, title, description, content, image = 'apertura', 
 </head>
 <body${path === '/' ? ' class="is-home"' : ''}>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
-  ${header(path)}
+  ${header(path, groups, products)}
   <main id="contenuto">${content}</main>
   ${footer(groups, products)}
   ${dock(path)}

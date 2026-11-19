@@ -27,6 +27,7 @@ Carattere unico **Hanken Grotesk** variabile, ospitato in `src/assets/fonts/` (n
 
 | Componente | Classe | Dove |
 |---|---|---|
+| Mega menu Prodotti: 4 famiglie con colore, 18 prodotti, riquadro preventivo. Hover o clic su desktop, sezione apribile nel menu mobile | `.nav__trigger`, `.mega` | tutte |
 | Testata fissa bianca, trasparente sulla home fino allo scorrimento | `.header`, `.header--over` | tutte |
 | Barra contatto flottante (preventivo, WhatsApp, telefono), si ritira sulla chiusura | `.dock` | tutte tranne Contatti |
 | Intestazione pagina con titolo su due righe | `.page-head` | pagine interne |

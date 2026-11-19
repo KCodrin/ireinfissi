@@ -16,6 +16,32 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
 const compact = window.matchMedia('(max-width: 960px)');
 
+// Mega menu Prodotti: hover e clic su desktop, sezione apribile nel menu mobile.
+const trigger = document.querySelector('.nav__trigger');
+const megaPanel = document.querySelector('#mega');
+const hoverable = window.matchMedia('(hover: hover) and (min-width: 961px)');
+let leaveTimer;
+
+function setMega(open) {
+  if (!trigger) return;
+  trigger.setAttribute('aria-expanded', String(open));
+  megaPanel.hidden = !open;
+  header.classList.toggle('is-mega', open && !compact.matches);
+}
+
+if (trigger) {
+  const item = trigger.parentElement;
+  // Con il mouse il pannello è già aperto dal passaggio: il clic non deve richiuderlo.
+  trigger.addEventListener('click', () => setMega(hoverable.matches || megaPanel.hidden));
+  item.addEventListener('mouseenter', () => { if (hoverable.matches) { clearTimeout(leaveTimer); setMega(true); } });
+  item.addEventListener('mouseleave', () => { if (hoverable.matches) leaveTimer = setTimeout(() => setMega(false), 180); });
+  document.addEventListener('click', (event) => { if (!compact.matches && !item.contains(event.target)) setMega(false); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !megaPanel.hidden && !compact.matches) { setMega(false); trigger.focus(); }
+  });
+  item.addEventListener('focusout', (event) => { if (!compact.matches && !item.contains(event.relatedTarget)) setMega(false); });
+}
+
 function setMenu(open) {
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
@@ -28,6 +54,7 @@ function setMenu(open) {
 function syncMenu() {
   menuToggle.hidden = !compact.matches;
   setMenu(false);
+  setMega(false);
 }
 
 if (menuToggle && navigation) {

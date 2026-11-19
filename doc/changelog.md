@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-19 · Mega menu Prodotti
+
+**Cosa** — La voce «Prodotti» dell’header apre un mega menu con le quattro famiglie, ognuna con il suo colore e i suoi prodotti, e un riquadro «Non sai da dove partire?» con il preventivo e il link a tutti i prodotti. Su desktop si apre con il passaggio del mouse o con il clic e si chiude con Esc, uscendo con il mouse, cliccando fuori o spostando il focus. Su mobile è una sezione apribile dentro il menu a schermo intero. In home la testata diventa bianca mentre il pannello è aperto.
+
+**Perché** — Richiesta dell’utente: mostrare subito i prodotti trattati.
+
+**Verifica** — `npm run check` riuscito su 25 pagine e 1076 riferimenti. A 1440 px provati in home (sopra la foto) e su Pergole l’apertura al clic, la chiusura con Esc e il ritorno del focus su «Prodotti». A 375 px provati il menu e l’apertura dei prodotti, senza scorrimento orizzontale. Corretto il testo bianco su bianco nel menu mobile aperto in home.
+
 ## 2026-11-19 · Vetro ad angoli vivi e footer a fisarmonica
 
 **Cosa** — Tolti i border-radius da tutti gli elementi in Liquid Glass (bottoni, «+», etichette, barra preventivo). Le sezioni del footer sono ora `details` nativi: aperte su desktop, chiuse a fisarmonica sotto i 560 px. Su desktop il titolo non si può chiudere né raggiungere con il tasto Tab. Corretta la fascia colorata sotto la foto delle card famiglia su mobile.
