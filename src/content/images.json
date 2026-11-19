@@ -1,0 +1,247 @@
+{
+  "serramenti": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Infissi-Legno.jpg"
+  },
+  "isolamento": {
+    "width": 1100,
+    "height": 733,
+    "source": "IRE-TORINO_controtelai_spalle_cassonetti_taglio-termico.jpg"
+  },
+  "schermature": {
+    "width": 1100,
+    "height": 733,
+    "source": "IRE-TORINO_persiane.jpg"
+  },
+  "pergole": {
+    "width": 1100,
+    "height": 733,
+    "source": "patio-with-pergola-table-with-chairs-2048x1365.jpg"
+  },
+  "infissi": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Infissi-in-PVC-rinforzato-2.jpg"
+  },
+  "alluminio": {
+    "width": 512,
+    "height": 353,
+    "source": "Alluminio.jpg"
+  },
+  "acciaio": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Infissi-e-Porte-in-Acciaio.jpg"
+  },
+  "porte": {
+    "width": 512,
+    "height": 353,
+    "source": "Porte-da-esterno.jpg"
+  },
+  "portoni": {
+    "width": 512,
+    "height": 353,
+    "source": "Portoni-sezionali.jpg"
+  },
+  "recinzioni": {
+    "width": 512,
+    "height": 353,
+    "source": "Recinzioni-e-cancelli.jpg"
+  },
+  "monoblocchi": {
+    "width": 1100,
+    "height": 733,
+    "source": "IRE-TORINO_MONOBLOCCO_COMBITHERMIC_2.jpg"
+  },
+  "controtelai": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO-Controtelai-a-taglio-termico.jpg"
+  },
+  "cassonetti": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Cassonetti-coibentati.jpg"
+  },
+  "posa": {
+    "width": 850,
+    "height": 850,
+    "source": "IRE-TORINO_Servizi-posa-Certificata.jpg"
+  },
+  "zanzariere": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Zanzariere.jpg"
+  },
+  "tapparelle": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Tapparelle-Avvolgibili.jpg"
+  },
+  "frangisole": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Frangisole-per-esterni.jpg"
+  },
+  "bioclimatiche": {
+    "width": 831,
+    "height": 831,
+    "source": "Cat-IRE-BIOCLIMATICHE-2024-WEB2.jpg"
+  },
+  "tende": {
+    "width": 1100,
+    "height": 733,
+    "source": "outdoor-dining-area-with-table-chairs-large-yellow-striped-awning-patio-surrounded-by-lush-green-trees-2048x1365.jpg"
+  },
+  "progettazione": {
+    "width": 850,
+    "height": 850,
+    "source": "IRE-TORINO_Servizi-progettazione.jpg"
+  },
+  "scorrevole-profilo": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Infissi-per-sistemi-scorrevoli.jpg"
+  },
+  "legno-alluminio-profilo": {
+    "width": 800,
+    "height": 600,
+    "source": "IRE-TORINO_Infissi-in-legno-Alluminio.jpg"
+  },
+  "acciaio-profili-loft": {
+    "width": 800,
+    "height": 600,
+    "source": "IRE-TORINO_Infissi-Acciaio-Loft.jpg"
+  },
+  "monoblocco-configurazioni": {
+    "width": 1050,
+    "height": 700,
+    "source": "IRE-TORINO_MONOBLOCCO_COMBITHERMIC_-FRANGISOLE-E-PERSIANA.jpg"
+  },
+  "controtelaio-sezione": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Controtelai-a-taglio-termico-2.jpg"
+  },
+  "cassonetto-ispezione": {
+    "width": 800,
+    "height": 800,
+    "source": "IRE-TORINO_Cassonetto-coibentato-Ispezione-dal-basso.jpg"
+  },
+  "zanzariera-scorrevole": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Zanzariere-scorrevoli-a-due-ante.jpg"
+  },
+  "avvolgibile-profilo": {
+    "width": 1000,
+    "height": 720,
+    "source": "IRE-TORINO_Avvolgibili-Coibentati-in-alluminio-estruso.jpg"
+  },
+  "persiane-finiture": {
+    "width": 1050,
+    "height": 613,
+    "source": "IRE-TORINO_Cartella-colori-Persiane-Alluminio.jpg"
+  },
+  "pergola-terrazza": {
+    "width": 856,
+    "height": 900,
+    "source": "Immagine-WhatsApp-2024-04-10-ore-08.22.39_52e20397.jpg"
+  },
+  "bioclimatica-luce": {
+    "width": 829,
+    "height": 829,
+    "source": "Cat-IRE-BIOCLIMATICHE-1.jpg"
+  },
+  "tende-balconi": {
+    "width": 1050,
+    "height": 703,
+    "source": "natural-view-balconies-building-with-plants-pots-hanging-railings-2048x1371.jpg"
+  },
+  "apertura": {
+    "width": 1920,
+    "height": 1280,
+    "source": "IRE-TORINO_persiane.jpg"
+  },
+  "isolamento-hd": {
+    "width": 1600,
+    "height": 1067,
+    "source": "IRE-TORINO_controtelai_spalle_cassonetti_taglio-termico.jpg"
+  },
+  "pergole-hd": {
+    "width": 1920,
+    "height": 1280,
+    "source": "patio-with-pergola-table-with-chairs-2048x1365.jpg"
+  },
+  "cat-zanzariere": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-1-1.jpg"
+  },
+  "cat-avvolgibili": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-2-1.jpg"
+  },
+  "cat-monoblocchi": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-3-1.jpg"
+  },
+  "cat-persiane": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-4.jpg"
+  },
+  "cat-pergolati": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-PERGOLATI.png"
+  },
+  "cat-vetrate": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-VETRATE-E-PERSIANE.png"
+  },
+  "cat-tende": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-TENDE-DA-SOLE.png"
+  },
+  "cat-bioclimatiche": {
+    "width": 900,
+    "height": 782,
+    "source": "MOCKUP_IRE-BIOCLIMATICHE.png"
+  },
+  "cat-legno": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Legno.jpg"
+  },
+  "cat-acciaio": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Acciaio.jpg"
+  },
+  "cat-alluminio": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Alluminio.jpg"
+  },
+  "cat-porte": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Porte-Dingresso.jpg"
+  },
+  "cat-sezionali": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Porte-Sezionali.jpg"
+  },
+  "cat-recinzioni": {
+    "width": 900,
+    "height": 782,
+    "source": "IRE-Cat_Recinzioni-Residenziali.jpg"
+  }
+}

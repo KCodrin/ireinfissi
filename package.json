@@ -1,0 +1,10 @@
+{
+  "name": "ire-torino",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && node scripts/serve.mjs",
+    "check": "npm run build && node scripts/check.mjs"
+  }
+}
